@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 const app = express();
 const bodyParser = require("body-parser");
-app.use('/static', express.static(path.join(__dirname, "static")))
+app.use('/static', express.static(path.join(__dirname, "public")))
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
 const routerAuth = require("./auth/routerauth.js");
