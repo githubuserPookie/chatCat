@@ -23,5 +23,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "A chatting app simlar to google chat",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/githubuserPookie/chatCat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/githubuserPookie/chatCat/issues"
+  },
+  "homepage": "https://github.com/githubuserPookie/chatCat#readme"
 }
