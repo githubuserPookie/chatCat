@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
 const Users = mongoose.model("User", userSchema);
 //const {Users} = require("../schemas/userSchema.js"); not working
 
-const renderFun = (req, res) => res.render("../static/register.ejs");
+const renderFun = (req, res) => res.render("../public/register.ejs");
 
 const registerFun = async(req, res) => {
     const usernameInput = req.body.username;
