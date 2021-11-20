@@ -13,7 +13,7 @@ app.use(express.json());
 const routerAuth = require("./routes/routerAuth.js");
 const routerHome = require("./routes/routerHome.js");
 
-const dbURI = "mongodb+srv://cmdrpookie:83mongoDB8383@chatcat.lwhro.mongodb.net/chatcat?retryWrites=true&w=majority";
+const dbURI = "mongodb+srv://cmdrpookie:<password>@chatcat.lwhro.mongodb.net/chatcat?retryWrites=true&w=majority";
 mongoose.connect(dbURI)
     .then((result) => {
         console.log("connected to db"); 
