@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const queryString = require("querystring");
 const mongoose = require("mongoose");
 
-const renderFun = (req, res) => res.render("../static/login.ejs");
+const renderFun = (req, res) => res.render("../public/login.ejs");
 
 const loginFun = (req, res) => {
     const usernameInput = req.body.username;
