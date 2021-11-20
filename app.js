@@ -10,10 +10,9 @@ app.use('/static', express.static(path.join(__dirname, "public")))
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
 
-const routerAuth = require("../routes/routerAuth.js");
-const routerHome = require("../routes/routerHome.js");
+const routerAuth = require("./routes/routerAuth.js");
+const routerHome = require("./routes/routerHome.js");
 
-const dbURI = "mongodb+srv://cmdrpookie:<password>@chatcat.lwhro.mongodb.net/chatcat?retryWrites=true&w=majority";
 mongoose.connect(dbURI)
     .then((result) => {
         console.log("connected to db");
