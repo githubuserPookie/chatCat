@@ -10,19 +10,24 @@ const loginFun = (req, res) => {
     const passwordInput = req.body.password;
     
     const Users = mongoose.model("User");
-    
+    //check db for username
     Users.find({username: usernameInput}, async(err, data) => {
+        //will check if user exists
         if(data[0]){
+            //look for username's encrypted password
             const usernamesPassword = data[0].password;
+            //check for matching input password and encrypted password
             const isValid = await bcrypt.compare(passwordInput, usernamesPassword)
-            console.log(isValid);
+            //is password valid?
             if(isValid == false){
                 res.json({sucess: "Incorrect password"});
             }
+            //else means username found and password matches
             else{
                 res.json({sucess: "true"})
             }
         }
+        //username not found
         else{
             res.json({sucess: "Username not found"})
         }
