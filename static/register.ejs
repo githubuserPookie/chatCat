@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/auth.css">
+</head>
+<body>
+    <div class="container">
+        <div class="container2">
+            <div class="logo">
+                Chat Cat <img src="/static/cat paw clip art.png" alt="">
+            </div>
+            <h1 class="mainText">Register</h1>
+        <form id="theForm">
+            <input id="username" type="text" placeholder="username" name="username" class="userInput" autocomplete="off"><br>
+            <input id="password" type="password" placeholder="password" name="password" class="userInput" autocomplete="off"><br>
+            <input type="submit" value="Register" class="submit" id="submit"/>
+        </form>
+        <p class="message">Already have an account? <a href="/auth/login">Login</a>?</p>
+        </div>
+    </div>
+<script>
+    const submit = document.getElementById("theForm");
+    const registerUser = async(event) => {
+        event.preventDefault();
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const result = await fetch("/auth/checkRegister", {
+            method: 'POST',
+			headers: {
+                'Content-Type': 'application/json'
+			},
+            body: JSON.stringify({
+                username,
+                password
+            })
+        }).then(async(response) => {
+            const theRes = await response.json();
+            if(theRes.sucess === "true"){
+                console.log("was sucessfull");
+                window.location.replace("/auth/login");
+            }
+            else{
+                alert(theRes.sucess)
+            }
+        })
+    }
+    submit.addEventListener("submit", registerUser);
+</script>
