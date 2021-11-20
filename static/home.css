@@ -1,0 +1,63 @@
+.logo {
+    margin: 30px 0;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: 40px;
+}
+.logo img {
+    width: 50px;
+}
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.nav a{
+    margin: 50px 5vw;
+    font-size: 25px;
+    color: #535353;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 550;
+}
+body {
+    background-color: #d3d3d3ff;
+}
+.message {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 550;
+}
+.question {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 550;
+}
+.friends {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.friend {
+    cursor: pointer;
+    margin: 20px 40px;
+    background-color: #c5c5c5ff;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 35px;
+    font-weight: 500;
+    width: 290px;
+    height: 100px;
+    border-radius: 10px;
+}
+.friendInside {
+    padding: auto auto;
+}
+.friendInside img{
+    padding: auto auto;
+    width: 70px;
+    height: 70px;
+}
