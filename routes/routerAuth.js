@@ -1,7 +1,8 @@
 const router = require("express").Router();
 const bcrypt = require("bcrypt");
-const login = require('./loginfunctions.js');
-const register = require('./registerfunctions.js');
+
+const login = require('./controllers/loginControllers.js');
+const register = require('./registerControllers.js');
 
 router.get("/login", login.renderFun);
 router.get("/register", register.renderFun);
