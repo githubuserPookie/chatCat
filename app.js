@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
 const routerAuth = require("./auth/routerauth.js");
 const routerHome = require("./home/routerHome.js");
-const dbURI = "mongodb+srv://cmdrpookie:83mongoDB83@chatcat.lwhro.mongodb.net/chatcat?retryWrites=true&w=majority";
+const dbURI = "mongodb+srv://cmdrpookie:<password>@chatcat.lwhro.mongodb.net/chatcat?retryWrites=true&w=majority";
 mongoose.connect(dbURI)
     .then((result) => {
         console.log("connected to db");
