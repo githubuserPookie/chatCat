@@ -28,4 +28,5 @@ app.use('/auth', routerAuth);
 app.get("/", (req, res) => {
     res.redirect("../auth/login");
 });
+
 app.listen(3000);
