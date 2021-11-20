@@ -2,13 +2,16 @@ const express = require("express");
 const http = require("http");
 const mongoose = require("mongoose");
 const path = require("path");
-const app = express();
 const bodyParser = require("body-parser");
+
+const app = express();
+
 app.use('/static', express.static(path.join(__dirname, "public")))
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
-const routerAuth = require("./auth/routerauth.js");
-const routerHome = require("./home/routerHome.js");
+
+const {routerAuth, routerHome} = require("./routes");
+
 const dbURI = "mongodb+srv://cmdrpookie:<password>@chatcat.lwhro.mongodb.net/chatcat?retryWrites=true&w=majority";
 mongoose.connect(dbURI)
     .then((result) => {
