@@ -1,3 +1,4 @@
+const mongoose = rrequire("mongoose");
 
 //create the user schema
 const userSchema = new mongoose.Schema({
