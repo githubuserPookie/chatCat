@@ -12,6 +12,7 @@ app.use(express.json());
 
 const routerAuth = require("./routes/routerAuth.js");
 const routerHome = require("./routes/routerHome.js");
+const routerChat = require("./routes/routerChat.js");
 
 const dbURI = "mongodb+srv://cmdrpookie:<password>@chatcat.lwhro.mongodb.net/chatcat?retryWrites=true&w=majority";
 mongoose.connect(dbURI)
@@ -21,8 +22,10 @@ mongoose.connect(dbURI)
     .catch((err) => {
         console.log(err);
     });
+
 app.use('/home', routerHome);
 app.use('/auth', routerAuth);
+app.use('/chat', routerChat);
 
 
 app.get("/", (req, res) => {
