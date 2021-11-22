@@ -1,10 +1,12 @@
 .logo {
     text-align: center;
     font-family: 'Lobster', cursive;
-    font-size: 40px;
+    font-size: 55px;
+    font-weight: 200;
+    color: #3d3d3d;;
 }
 .logo img {
-    width: 50px;
+    width: 70px;
 }
 .mainText {
     text-align: center;

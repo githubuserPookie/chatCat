@@ -13,4 +13,5 @@ form.addEventListener("submit", (event) => {
 socket.on("message", msg => {
     messageLogHTML.innerHTML = messageLogHTML.innerHTML + "<h2>" + msg + "</h2>";
     console.log(msg);
+    messageLogHTML.scrollTop = messageLogHTML.scrollHeight;
 })

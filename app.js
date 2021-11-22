@@ -44,7 +44,7 @@ app.use('/chat', routerChat);
 
 
 app.get("/", (req, res) => {
-    res.redirect("../auth/login");
+    res.redirect("../home");
 });
 
 server.listen(3000, () => {console.log("server lsitenning on port 3000")});
