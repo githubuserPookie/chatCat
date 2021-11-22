@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
+//const socket = io();
 
 const ioConnection = (req, res) => {
-    io.on("connection", socket => {
+    socket.on("connection", socket => {
         console.log("a new connection");
     })
     console.log("visted /chat")

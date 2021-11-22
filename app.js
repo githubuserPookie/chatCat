@@ -27,7 +27,15 @@ mongoose.connect(dbURI)
     });
 
 io.on('connection', (socket) => {
-    console.log("connected");
+    //gonna have to import a module here instead of writting all this in app.js
+    //socket.emit('message', 'Welcome to chat cat')
+    //io.emit('message', 'a new user connected');
+    socket.on('disconnect', (socket) => {
+        // io.emit('message', 'a user left the chat')
+    })
+    socket.on("clientMessage", msg => {
+        io.emit('message', msg)
+    })
 })
 
 app.use('/home', routerHome);
