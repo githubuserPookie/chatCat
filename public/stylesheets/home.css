@@ -82,7 +82,7 @@ body {
 }
 #navBar {
   display: flex;
-  width: 90vw;
+  width: 85vw;
   margin: 0 auto;
 }
 #talkWithFriends {
@@ -117,10 +117,6 @@ body {
   text-align: auto;
 }
 #Profile {
-  cursor: pointer;
-  border-radius: 10px;
-  padding: 8px 14px;
-  background-color: rgb(218, 188, 178);
   font-size: 42px;
 }
 #Logout {
@@ -155,8 +151,8 @@ body {
 #menueImg {
   width: 50px;
   height: 40px;
-  margin-left: 10px;
-  padding-top: 5px;
+  margin-left: 30px;
+  padding-top: 10px;
 }
 #profileMenueDiv {
   display: flex;
