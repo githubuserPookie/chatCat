@@ -6,6 +6,8 @@ const register = require('../controllers/registerControllers.js');
 
 router.get("/login", login.renderFun);
 router.get("/register", register.renderFun);
+router.get("/checkIfLogin", login.checkIfLogInFun);
+router.get("/logout", login.logoutFun);
 
 router.post("/checkRegister", register.registerFun);
 router.post("/checkLogin", login.loginFun);

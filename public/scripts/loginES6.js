@@ -1,4 +1,5 @@
 const submit = document.getElementById("theForm");
+
 const loginUser = async(event) => {
     event.preventDefault();
     const username = document.getElementById("username").value;
@@ -22,4 +23,5 @@ const loginUser = async(event) => {
         }
     })
 }
+
 submit.addEventListener("submit", loginUser);

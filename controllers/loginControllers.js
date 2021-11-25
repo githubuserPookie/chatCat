@@ -1,3 +1,4 @@
+const sessionExpress = require("express-session");
 const fs = require("fs");
 const bcrypt = require("bcrypt");
 const queryString = require("querystring");
@@ -6,6 +7,7 @@ const mongoose = require("mongoose");
 const renderFun = (req, res) => res.render("../views/login.ejs");
 
 const loginFun = (req, res) => {
+  console.log("/login requested")
     const usernameInput = req.body.username;
     const passwordInput = req.body.password;
     
@@ -24,6 +26,7 @@ const loginFun = (req, res) => {
             }
             //else means username found and password matches
             else{
+                req.session.userName = usernameInput;
                 res.json({sucess: "true"})
             }
         }
@@ -34,4 +37,20 @@ const loginFun = (req, res) => {
     })
 };
 
-module.exports = {renderFun, loginFun};
+const logoutFun = (req, res) => {
+  console.log("/auth/logout requested")
+  req.session.userName = null;
+  res.redirect("/");
+}
+
+const checkIfLogInFun = (req, res) => {
+  console.log("check logi");
+  if(req.session.userName){
+    res.json({sucess: "true", userName: req.session.userName});
+  }
+  else{
+    res.json({sucess: "false"});
+  }
+}
+
+module.exports = {logoutFun, renderFun, loginFun, checkIfLogInFun};

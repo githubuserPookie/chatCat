@@ -5,9 +5,16 @@
     font-weight: 200;
     color: #3d3d3d;;
 }
+.logo a{
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: 55px;
+    font-weight: 200;
+    color: #3d3d3d;;
+}
 .logo img {
     width: 70px;
-    cursor: pointer;
 }
 .mainText {
     text-align: center;
@@ -17,7 +24,7 @@
     font-weight: 550;
 }
 body {
-    background-color: #d3d3d3ff;
+    background-color: #EBD4CB;
 }
 #theForm {
     text-align: center;
