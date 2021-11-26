@@ -3,17 +3,17 @@
     "public/scripts/homeES6.js": [
       {
         "id": "c2ffb6d5-b6a0-414d-9895-ea58d2910a83",
-        "line": 37,
-        "version": 1608,
-        "index": 1358
+        "line": 34,
+        "version": 1492,
+        "index": 1201
       }
     ],
     "views/home.ejs": [
       {
         "id": "987489c1-e682-456f-82c1-31df1424c30a",
-        "line": 34,
-        "version": 3635,
-        "index": 1457
+        "line": 31,
+        "version": 3476,
+        "index": 1346
       }
     ]
   }
