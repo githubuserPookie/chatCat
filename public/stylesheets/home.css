@@ -5,7 +5,6 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 50px;
     font-weight: 200;
-    color: #3d3d3d;
     color: #2C0703;
 }
 .logo img {
@@ -160,4 +159,25 @@ body {
 }
 #profileMenueDiv {
   display: flex;
+}
+#serverPrivatRoomContainer {
+  text-align: center;
+  margin-top: 80px;
+  font-size: 40px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-around;
+  width: 90vw;
+}
+.containerRooms {
+  overflow-y: auto;
+  overflow-x: auto;
+  border: solid;
+  height: 20vh;
+  width: 500px;
+}
+.containerRooms a {
+  text-decoration: none;
+  margin: 20px;
 }

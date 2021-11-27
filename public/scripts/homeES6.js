@@ -1,4 +1,6 @@
 //const menueImgHTML = document.getElementById("menueImg");
+const middleSectionLoggedIn = document.getElementById("middleSectionLoggedIn");
+const middelSectionHTML = document.querySelector("#middleSectionHTML")
 const publicChatHTML = document.getElementById("publicRoom");
 const logout = document.getElementById("Logout");
 const profile = document.getElementById("Profile");
@@ -13,10 +15,11 @@ const isLoggedIn = await fetch("/auth/checkIfLogin", {
   .then(async(response) => {
       const theRes = await response.json();
       if(theRes.sucess === "true"){
+        middleSectionLoggedIn.style.display = "block";
+        middelSectionHTML.style.display = "none";
         //show home page for logged in users
         profile.style.display = "block";
         logout.style.display = "block";
-        //menueImgHTML.style.display = "block";
         registerHTML.style.display = "none";
         loginHTML.style.display = "none";
         publicChatHTML.style.display = "block";
@@ -24,6 +27,8 @@ const isLoggedIn = await fetch("/auth/checkIfLogin", {
       }
       else{
         //show the home page for non-logged in users
+        middleSectionLoggedIn.style.display = "none";
+        middelSectionHTML.style.display = "block";
           publicChatHTML.style.display = "none";
           profile.style.display = "none";
           logout.style.display = "none";
