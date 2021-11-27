@@ -7,6 +7,13 @@
     width: 55vw;
     height: 70vh;
     max-height: 80vh;
+    max-width: 55vw;
+    word-wrap: break-word;
+    font-size: 0px;
+}
+
+#messageLog h2{
+  font-size: 20px;
 }
 body {
     background-color: #EBD4CB;
