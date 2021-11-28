@@ -15,6 +15,22 @@
     <form action="" id="form" autocomplete="off">
         <input type="search" name="" id="message" placeholder="Enter your message">
     </form>
+    <div id="containerForImages">
+      <div id="errorImg">
+      <img
+        src="../public/images/RedError.png"
+
+        alt="Invalid message" />
+        <h1>Invalid Message</h1>
+      </div>
+      <div id="cursingImg">
+      <img
+        src="../public/images/Cursing.png"
+        id="cursingImg"
+        alt="Don't curse" />
+        <h1>Don't Curse</h1>
+      </div>
+    </div>
     <script src="socket.io/socket.io.js"></script>
     <script type="module" src="../public/scripts/chat.js"></script>
     <script type="module" src="../public/scripts/functions/messageRelated.js"></script>

@@ -169,6 +169,7 @@ body {
   display: flex;
   justify-content: space-around;
   width: 90vw;
+  flex-wrap: wrap;
 }
 .containerRooms {
   overflow-y: auto;
@@ -176,6 +177,7 @@ body {
   border: solid;
   height: 20vh;
   width: 500px;
+  margin-left: 50px;
 }
 .containerRooms a {
   text-decoration: none;

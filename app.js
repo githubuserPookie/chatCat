@@ -12,7 +12,7 @@ const io = require("socket.io")(server);
 app.use('/public', express.static(path.join(__dirname, "public")))
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
-//app.use(cookieParser());
+
 app.use(expressSession({
   secret: "secret-key",
   resave: false,
@@ -22,7 +22,7 @@ app.use(expressSession({
 const routerAuth = require("./routes/routerAuth.js");
 const routerHome = require("./routes/routerHome.js");
 const routerChat = require("./routes/routerChat.js");
-const router = require("./routes/routerAuth.js");
+const routerSafety = require('./routes/routerSafety.js')
 
 const dbURI = "mongodb+srv://cmdrpookie:rKtJyOkUHw52WsZ6@chatcat.lwhro.mongodb.net/chatcat?retryWrites=true&w=majority";
 mongoose.connect(dbURI)
@@ -40,12 +40,9 @@ io.on('connection', (socket) => {
 })
 
 app.use('/home', routerHome);
+app.use('/', routerHome);
 app.use('/auth', routerAuth);
 app.use('/chat', routerChat);
-
-
-app.get("/", (req, res) => {
-    res.redirect("../home");
-});
+app.use('/safety', routerSafety);
 
 server.listen(3000, () => {console.log("server lsitenning on port 3000")});

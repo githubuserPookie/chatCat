@@ -48,3 +48,34 @@ body {
   top: 3%;
   left: 3%;
 }
+
+#errorImg {
+  float: bottom;
+  margin-top: 0px;
+  margin-left: 0px;
+  background: rgba(0, 0, 0, 0);
+}
+
+#errorImg img {
+  width: 30px;
+  height: 30px;
+}
+
+#cursingImg {
+  float: bottom;
+  display: flex;
+  margin-top: 0px;
+  margin-left: 0px;
+  background: rgba(0, 0, 0, 0);
+}
+
+#cursingImg img {
+  width: 30px;
+  height: 30px;
+}
+
+#containerForImages {
+  float: bottom;
+  display: flex;
+  margin-left: 30px;
+}

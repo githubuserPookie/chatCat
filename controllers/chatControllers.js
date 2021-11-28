@@ -30,7 +30,7 @@ const checkFor50 = () => {
       for (let i = 0; i < 100; i++) {
         newArrResult.push(messagesResult[messagesResult.length - i]);
         const messagesArrayDB = messagesResult;
-        console.log(messagesArrayDB + "is arr")
+        // console.log(messagesArrayDB + "is arr")
         publicChat.update(
           {
             chatName: "publicChat"
@@ -56,10 +56,10 @@ function loadChatContent(req, res) {
   console.log("/load chat requested why not woooooooooorking")
   publicChat.find({ chatName: "publicChat" }, async (err, data) => {
     const result = data[0];
-    console.log(result);
+    // console.log(result);
     const messagesResult = result.messages;
     res.json({ messages: messagesResult })
-    console.log(result.messages[0] + "are the messages");
+    // console.log(result.messages[0] + "are the messages");
   })
 }
 
@@ -84,9 +84,9 @@ const addMessage = (req, res) => {
     const messagesResult = result.messages;
 
     const messagesArrayDB = messagesResult;
-    console.log(messagesArrayDB + "is arr")
+    // console.log(messagesArrayDB + "is arr")
     messagesArrayDB.push(req.body.message);
-    console.log(messagesArrayDB)
+    // console.log(messagesArrayDB)
     publicChat.update(
       {
         chatName: "publicChat"
