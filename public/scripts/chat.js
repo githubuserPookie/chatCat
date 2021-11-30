@@ -5,8 +5,12 @@ const form = document.getElementById("form");
 const messageHTML = document.getElementById("message");
 const messageLogHTML = document.getElementById("messageLog");
 const errorImage = document.querySelector("#errorImg");
+const containFormMessageLog = document.getElementById("containFormMessageLog");
 errorImage.setAttribute('draggable', false);
 errorImage.style.opacity = 0;
+const warningImage = document.querySelector("#warningImg");
+warningImage.setAttribute('draggable', false);
+warningImage.style.opacity = 0;
 const cursingImage = document.querySelector("#cursingImg");
 cursingImage.setAttribute('draggable', false);
 cursingImage.style.opacity = 0;
@@ -21,28 +25,35 @@ const isLoggedIn = fetch("/auth/checkIfLogin", {
     const theRes = await response.json();
     if (theRes.sucess === "true") {
       const username = theRes.userName;
-
-      //will run when new message is submited
+      //will run when a key is pressed
       form.addEventListener("keydown", (event) => {
         setTimeout((event) => {
           let messageValueHTML = messageHTML.value;
           const hasCursed = checkCurses(messageValueHTML);
+          const filteredMessageValueHTML = checkMessage(messageValueHTML);
           console.log(hasCursed);
           // Detect if the message contains too few/many characters, to prevent spam.
-          if (messageValueHTML.length > 2000) {
-            errorImage.style.opacity = 1;
-          } else {
-            errorImage.style.opacity = 0;
-            setTimeout(() => { errorImage.style.opacity = 0; }, 2000);
-          }
           if (hasCursed) {
             cursingImage.style.opacity = 1;
           } else {
             cursingImage.style.opacity = 0;
           }
+
+          if (!filteredMessageValueHTML.length) {
+            warningImage.style.opacity = 0;
+          } else if (filteredMessageValueHTML.length == 0) {
+            warningImage.style.opacity = 0;
+          } else if (filteredMessageValueHTML.length < 2) {
+            warningImage.style.opacity = 1;
+          } else if (filteredMessageValueHTML.length > 2000) {
+            warningImage.style.opacity = 1;
+          } else {
+            warningImage.style.opacity = 0;
+          }
         }, 50)
 
       })
+      //will run when a message is submitted
       form.addEventListener("submit", (event) => {
 
         event.preventDefault();//prevent page from reloading
@@ -55,19 +66,18 @@ const isLoggedIn = fetch("/auth/checkIfLogin", {
         const newMessageValueHTML = `<h2>${username}: ${filteredMessageValueHTML}</h2><h5></h5>`;
 
         // Detect if the message contains too few/many characters, to prevent spam.
-        if (!filteredMessageValueHTML.length) {//i made it so that it checks message length on every key press
+        if (!filteredMessageValueHTML.length) {
           errorImage.style.opacity = 1;
+          setTimeout(() => { errorImage.style.opacity = 0; }, 1500);
         } else if (filteredMessageValueHTML.length == 0) {
           errorImage.style.opacity = 1;
-          setTimeout(() => { errorImage.style.opacity = 0; }, 2000);
+          setTimeout(() => { errorImage.style.opacity = 0; }, 1500);
         } else if (filteredMessageValueHTML.length < 2) {
           errorImage.style.opacity = 1;
-          setTimeout(() => { errorImage.style.opacity = 0; }, 2000);
-          alert("Minimum message size: 2");
+          setTimeout(() => { errorImage.style.opacity = 0; }, 1500);
         } else if (filteredMessageValueHTML.length > 2000) {
           errorImage.style.opacity = 1;
-          setTimeout(() => { errorImage.style.opacity = 0; }, 2000);
-          alert("Maximum message size: 2000");
+          setTimeout(() => { errorImage.style.opacity = 0; }, 1500);
         } else {
 
           socket.emit('clientMessage', newMessageValueHTML);
@@ -85,7 +95,7 @@ const isLoggedIn = fetch("/auth/checkIfLogin", {
       socket.on("message", msg => {
         messageLogHTML.innerHTML = messageLog.innerHTML + msg;
         console.log(msg);
-        messageLogHTML.scrollTop = messageLogHTML.scrollHeight;
+        containFormMessageLog.scrollTop = containFormMessageLog.scrollHeight;
       })
     }
     else {
@@ -106,7 +116,7 @@ const fetchChatData = fetch("/chat/loadData", {
   messagesFetch = messagesFetch.replace(/,/g, "");
   messageLogHTML.innerHTML = messagesFetch;
   console.log(messagesFetch);
-  messageLogHTML.scrollTop = messageLogHTML.scrollHeight;
+  containFormMessageLog.scrollTop = containFormMessageLog.scrollHeight;
 })
   .catch((err) => {
     console.log(err);

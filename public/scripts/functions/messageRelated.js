@@ -1,9 +1,24 @@
 import { badWords, tempReplaceWords, permReplacedWords, easterEggs, allowedWords } from '../../../public/scripts/unvaryingData/blockedWords.js';
 function checkMessage(message) {
   // Turn the message string into an array
-  const permReplacedMessage = replaceCharacters(message, permReplacedWords);
+  let permIndex = 100;
+  let permReplacedMessage = replaceCharacters(message, permReplacedWords);
+  let lastPermReplacedMessage;
+  while (permReplacedMessage != lastPermReplacedMessage && permIndex > 0) {
+    lastPermReplacedMessage = permReplacedMessage;
+    permReplacedMessage = replaceCharacters(permReplacedMessage, permReplacedWords);
+    permIndex--;
+  }
   let messageArray = permReplacedMessage.split(" ");
-  const internalMessageArray = replaceCharacters(permReplacedMessage, tempReplaceWords).split(" ");
+  let internalIndex = 100;
+  let internalMessageArray = replaceCharacters(permReplacedMessage, tempReplaceWords);
+  let lastInternalMessageArray;
+  while (internalMessageArray != lastInternalMessageArray && internalIndex > 0) {
+    lastInternalMessageArray = internalMessageArray;
+    internalMessageArray = replaceCharacters(internalMessageArray, tempReplaceWords);
+    internalIndex--;
+  }
+  internalMessageArray = replaceCharacters(internalMessageArray, tempReplaceWords).split(" ");
   let filteredMessage = "You just found a bug";
 
   let easterEgg = null;
@@ -37,7 +52,6 @@ function checkMessage(message) {
               starsCount = starsCount + "*";
             }
             messageArray[messageIndex] = messageArray[messageIndex].charAt(0) + starsCount;
-            console.log("Curse");
           }
         }
       }
@@ -51,9 +65,24 @@ function checkMessage(message) {
 
 function checkCurses(message) {
   // Turn the message string into an array
-  const permReplacedMessage = replaceCharacters(message, permReplacedWords);
+  let permIndex = 100;
+  let permReplacedMessage = replaceCharacters(message, permReplacedWords);
+  let lastPermReplacedMessage;
+  while (permReplacedMessage != lastPermReplacedMessage && permIndex > 0) {
+    lastPermReplacedMessage = permReplacedMessage;
+    permReplacedMessage = replaceCharacters(permReplacedMessage, permReplacedWords);
+    permIndex--;
+  }
   let messageArray = message.split(" ");
-  const internalMessageArray = replaceCharacters(permReplacedMessage, tempReplaceWords).split(" ");
+  let internalIndex = 100;
+  let internalMessageArray = replaceCharacters(permReplacedMessage, tempReplaceWords);
+  let lastInternalMessageArray;
+  while (internalMessageArray != lastInternalMessageArray && internalIndex > 0) {
+    lastInternalMessageArray = internalMessageArray;
+    internalMessageArray = replaceCharacters(internalMessageArray, tempReplaceWords);
+    internalIndex--;
+  }
+  internalMessageArray = replaceCharacters(internalMessageArray, tempReplaceWords).split(" ");
 
   let cursed = false
 

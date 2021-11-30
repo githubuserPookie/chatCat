@@ -1,4 +1,5 @@
 //const menueImgHTML = document.getElementById("menueImg");
+
 const middleSectionLoggedIn = document.getElementById("middleSectionLoggedIn");
 const middelSectionHTML = document.querySelector("#middleSectionHTML")
 const publicChatHTML = document.getElementById("publicRoom");
