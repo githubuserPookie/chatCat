@@ -22,6 +22,7 @@ app.use(expressSession({
 const routerAuth = require("./routes/routerAuth.js");
 const routerHome = require("./routes/routerHome.js");
 const routerChat = require("./routes/routerChat.js");
+const routerInformation = require("./routes/routerInformation.js");
 const routerSafety = require('./routes/routerSafety.js')
 
 const dbURI = "mongodb+srv://cmdrpookie:rKtJyOkUHw52WsZ6@chatcat.lwhro.mongodb.net/chatcat?retryWrites=true&w=majority";
@@ -43,6 +44,7 @@ app.use('/home', routerHome);
 app.use('/', routerHome);
 app.use('/auth', routerAuth);
 app.use('/chat', routerChat);
+app.use('/information', routerInformation);
 app.use('/safety', routerSafety);
 
 server.listen(3000, () => {console.log("server lsitenning on port 3000")});

@@ -1,5 +1,10 @@
 //const menueImgHTML = document.getElementById("menueImg");
+const menuBtn = document.querySelector(".menu-btn");
+const dropDownContent = document.querySelector(".dropDownContent");
 
+// dropDownContent.addEventListener("mouseleave", () => {
+//   dropDownContent.style.display = "none";
+// })
 const middleSectionLoggedIn = document.getElementById("middleSectionLoggedIn");
 const middelSectionHTML = document.querySelector("#middleSectionHTML")
 const publicChatHTML = document.getElementById("publicRoom");
@@ -46,3 +51,15 @@ const isLoggedIn = await fetch("/auth/checkIfLogin", {
 //     'content-Type': 'application/json',
 //   }
 // })}
+let menuOpen = false;
+menuBtn.addEventListener('click', () => {
+  if(!menuOpen) {
+    dropDownContent.style.height = "215px";
+    menuBtn.classList.add('open');
+    menuOpen = true;
+  } else {
+    menuBtn.classList.remove('open');
+    dropDownContent.style.height = "0px";
+    menuOpen = false;
+  }
+});// 
