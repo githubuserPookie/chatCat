@@ -85,7 +85,7 @@ body {
   margin: 0 auto;
   position:sticky;
   top: 0px;
-  background-color:#EBD4CC;
+  background-color:none;
   max-height: 100px;
 }
 #talkWithFriends {
@@ -181,9 +181,10 @@ body {
   font-weight: 500;
   display: flex;
   justify-content: space-around;
-  width: 90vw;
+  width: 100%;
   flex-wrap: wrap;
-}
+  margin-left: -25px;
+  }
 .containerRooms {
   overflow-y: auto;
   overflow-x: auto;
@@ -263,7 +264,7 @@ body {
   border: solid;
   border-radius: 10px;
   cursor: pointer;
-  margin-left: 10px;
+  margin-left: 50px;
 }
 #searchForGroop {
   position: absolute;
@@ -304,4 +305,11 @@ body {
 }
 #containerForAdding {
   padding: 15px;
+}
+.headerDiv {
+  position: sticky;
+  top: 0;
+  background-color: rgb(216, 186, 175);
+  height: 120px;
+  opacity: 0.97;
 }
