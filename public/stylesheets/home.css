@@ -127,13 +127,16 @@ body {
   border-width: 100px;
   margin-right: 10px;
   margin-top: 10px;
+  display: flex;
+  align-items: center;
 }
+
 #Logout {
   display: none;
 }
-.dropDownMenue {
-  display: inline-block;
-}
+/* .dropDownMenue {
+  display: inline-block; 
+}*/
 .dropDownContent {
   background-color:rgb(231, 196, 182);
   /* display: none; */
@@ -204,9 +207,6 @@ body {
   color: rgb(165, 128, 128);
 }
 .menu-btn {
-  position: fixed;
-  right: 0;
-  top: 5%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -214,8 +214,8 @@ body {
   height: 80px;
   cursor: pointer;
   transition: all .5s ease-in-out;
-  margin-top: -10px;
-  margin-right: 20px;
+  /* margin-top: -10px;
+  margin-right: 20px; */
 }
 .menu-btn__burger {
   width: 50px;
@@ -256,4 +256,51 @@ body {
 }
 .flex {
   display: flex;
+}
+.addFriendImg {
+  width: 50px;
+  border: solid;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+#searchForGroop {
+  position: absolute;
+  top: 65%;
+  text-align: center;
+  width: 80vw;
+}
+#searchForGroop {
+  display: none;
+  width: 100%;
+}
+#exitSearch {
+  /* float: right; */
+  margin-left: auto;
+  margin-bottom: auto;
+  margin-top: 0px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 40px;
+}
+#searchForm {
+  background-color: white;
+  height: 100px;
+  width: 80vw;
+  opacity: 0.94;
+  text-align: center;
+  /* display: flex;
+  justify-content: center;
+  align-items: center;*/
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#searchForm input {
+  font-size: 3vw;
+  margin: 0 auto;
+}
+#containerForAdding {
+  padding: 15px;
 }

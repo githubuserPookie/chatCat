@@ -24,7 +24,7 @@
         <!-- <a href="/auth/logout" id="Logout">Logout</a> -->
         <div class="dropDownMenue">
         <div id="Profile">
-          <span id="">Account</span>
+          <span>Account</span>
           <div class="menu-btn">
           <div class="menu-btn__burger">
         </div>
@@ -53,15 +53,14 @@
     <div id="middleSectionLoggedIn">
       <div id="serverPrivatRoomContainer">
         <div id="Servers">
-          <h2>Group Chat</h2>
+          <h2>Group Chat<img src="../public/images/add friend.png" class="addFriendImg" id="addServer"></h2>
           <div class="containerRooms">
             <a id='mainserver' href="/chat">Main Chat</a>
           </div>
         </div>
         <div id="privateChat">
-          <h2>Private Chat</h2>
+          <h2>Private Chat <img src="../public/images/add friend.png" class="addFriendImg" id="addFriend"></h2>
           <div class="containerRooms">
-            
           </div>
         </div>
       </div>
@@ -82,8 +81,14 @@
             </div>
         </div>
     -->
-    <div>
-      <!-- <img src="../public/images/PngItem_5297554.png" alt=""> -->
+    <div id="searchForGroop">
+      <form id="searchForm" autocomplete="off">
+      <div class="flex" id="containerForAdding">
+        <input type="search" id="searchForGroopInput"></input>
+        <input type="submit" id="submitSearch"></input>
+      </div>
+        <h1 id="exitSearch">&#215</h1>
+      </form>
     </div>
     <script type="module" src="../public/scripts/homeES6.js"></script>
 </body>
