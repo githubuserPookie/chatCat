@@ -90,8 +90,6 @@ let valueSearch;
 
 addFriendHTML.addEventListener("click", (event) => {
   isAddingServer = false;
-  valueSearch = searchForGroopInputHTML.value;
-  searchForGroopInputHTML.value = "";
   searchForGroopHTML.style.display = "block";
   searchForGroopHTML.classList.add("popUp");
   searchForGroopInputHTML.placeholder = "Enter friend username";
@@ -99,7 +97,6 @@ addFriendHTML.addEventListener("click", (event) => {
 
 addServerHTML.addEventListener("click", (event) => {
   isAddingServer = true;
-  valueSearch = searchForGroopInputHTML.value;
   searchForGroopInputHTML.value = "";
   searchForGroopHTML.style.display = "block";
   searchForGroopHTML.classList.add("popUp");
@@ -130,10 +127,14 @@ searchFormHTML.addEventListener("submit", (event) => {
   searchForGroopHTML.classList.remove("popUp");
   if(isSubmited()){
     if(isAddingServer){
+      valueSearch = searchForGroopInputHTML.value;
       fetchAddChat("server", valueSearch);
+      searchForGroopInputHTML.value = "";
     }
     else{
+      valueSearch = searchForGroopInputHTML.value;
       fetchAddChat("private", valueSearch);
+      searchForGroopInputHTML.value = "";
     }
   }
 });

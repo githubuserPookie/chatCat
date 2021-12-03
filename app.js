@@ -23,7 +23,8 @@ const routerAuth = require("./routes/routerAuth.js");
 const routerHome = require("./routes/routerHome.js");
 const routerChat = require("./routes/routerChat.js");
 const routerInformation = require("./routes/routerInformation.js");
-const routerSafety = require('./routes/routerSafety.js')
+const routerSafety = require('./routes/routerSafety.js');
+const routerAdd = require('./routes/routerAdd.js');
 
 const dbURI = "mongodb+srv://cmdrpookie:rKtJyOkUHw52WsZ6@chatcat.lwhro.mongodb.net/chatcat?retryWrites=true&w=majority";
 mongoose.connect(dbURI)
@@ -46,5 +47,6 @@ app.use('/auth', routerAuth);
 app.use('/chat', routerChat);
 app.use('/information', routerInformation);
 app.use('/safety', routerSafety);
+app.use("/add/", routerAdd);
 
 server.listen(3000, () => {console.log("server lsitenning on port 3000")});

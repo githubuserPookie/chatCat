@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="shortcut icon" href="../public/images/newlogo33.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
@@ -13,83 +14,86 @@
     <link rel="stylesheet" href="/public/stylesheets/home.css">
 </head>
 <body>
-  <div id="navBar">
-  
-    <div class="logo">
-         <img src="../public/images/ChatCAT__1_-removebg-preview.png" alt="">Chat Cat
-    </div>
-    <div class="nav">
-        <a href="/auth/login" id="Login">Login</a>
-        <a href="/auth/register" id="Register">Register</a>
-        <!-- <a href="/auth/logout" id="Logout">Logout</a> -->
-        <div class="dropDownMenue">
-        <div id="Profile">
-          <span>Account</span>
-          <div class="menu-btn">
-          <div class="menu-btn__burger">
-        </div>
-    </div>
-        </div>
-          <div class="dropDownContent">
-            <a href="/auth/logout" id="Logout">Logout</a>
-            <a href="/profile" id="profileMenue">Profile</a>
-            <a id='information' href="/information">General Info</a>
+  <!--<img src="../public/images/newlogo33.ico">-->
+
+    <div id="navBar">
+    
+      <div class="logo">
+          <img src="../public/images/ChatCAT__1_-removebg-preview.png" alt="">Chat Cat
+      </div>
+      <div class="nav">
+          <a href="/auth/login" id="Login">Login</a>
+          <a href="/auth/register" id="Register">Register</a>
+          <!-- <a href="/auth/logout" id="Logout">Logout</a> -->
+          <div class="dropDownMenue">
+          <div id="Profile">
+            <span>Account</span>
+            <div class="menu-btn">
+            <div class="menu-btn__burger">
           </div>
-        </div>
-    </div>
+      </div>
   </div>
-  <!--<div id="ChatsAndServers">
-      <a href="/Chats" id="Chats">Chats</a>
-    <div class="Rooms">
-    </div>
-        <a href="/Rooms" id="Rooms">Rooms</a>
-  </div>-->
-    <div class="logo" id="middleSectionHTML">
-    <img src="../public/images/ChatCAT__1_-removebg-preview.png" id="mainImg">
-    <br/>
-    <a href="/chat" id="publicRoom">Public Room</a>
-    <h1 id="talkWithFriends">Talk, Share, Interact</h1>
-    </div>
-    <div id="middleSectionLoggedIn">
-      <div id="serverPrivatRoomContainer">
-        <div id="Servers">
-          <h2>Group Chat<img src="../public/images/add friend.png" class="addFriendImg" id="addServer"></h2>
-          <div class="containerRooms">
-            <a id='mainserver' href="/chat">Main Chat</a>
           </div>
-        </div>
-        <div id="privateChat">
-          <h2>Private Chat <img src="../public/images/add friend.png" class="addFriendImg" id="addFriend"></h2>
-          <div class="containerRooms">
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-    <div id="aboutUsDiv">
-      <p id="AboutUs">More Info</p>
-      <ul id="ul">
-        <li>Creator: Alex</li>
-        <li>Special thanks to: Nicolas & Daniel</li>
-        <li>Contact: 123-4567-8901, insert gmail img, insert twitter img, insert discord img here.....</li>
-      </ul>
-    </div>
-        <!-- <div class="friend">
-        <div class="friend">
-            <div class="friendInside">
-                1234567890 <img src="https://appamatix.com/wp-content/uploads/2016/05/Anonymous-FeatPic-1200x900.jpg" alt="">
+            <div class="dropDownContent">
+              <a href="/auth/logout" id="Logout">Logout</a>
+              <a href="/profile" id="profileMenue">Profile</a>
+              <a id='information' href="/information">Info / Help</a>
             </div>
-        </div>
-    -->
-    <div id="searchForGroop">
-      <form id="searchForm" autocomplete="off">
-      <div class="flex" id="containerForAdding">
-        <input type="search" id="searchForGroopInput"></input>
-        <input type="submit" id="submitSearch"></input>
+          </div>
       </div>
-        <h1 id="exitSearch">&#215</h1>
-      </form>
     </div>
-    <script type="module" src="../public/scripts/homeES6.js"></script>
+    <!--<div id="ChatsAndServers">
+        <a href="/Chats" id="Chats">Chats</a>
+      <div class="Rooms">
+      </div>
+          <a href="/Rooms" id="Rooms">Rooms</a>
+    </div>-->
+      <div class="logo" id="middleSectionHTML">
+      <img src="../public/images/ChatCAT__1_-removebg-preview.png" id="mainImg">
+      <br/>
+      <a href="/chat" id="publicRoom">Public Room</a>
+      <h1 id="talkWithFriends">Talk, Share, Interact</h1>
+      </div>
+      <div id="middleSectionLoggedIn">
+        <div id="serverPrivatRoomContainer">
+          <div id="Servers">
+            <h2>Group Chat<img src="../public/images/add friend.png" class="addFriendImg" id="addServer"></h2>
+            <div class="containerRooms">
+              <a id='mainserver' href="/chat">Main Chat</a>
+            </div>
+          </div>
+          <div id="privateChat">
+            <h2>Private Chat <img src="../public/images/add friend.png" class="addFriendImg" id="addFriend"></h2>
+            <div class="containerRooms">
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div id="aboutUsDiv">
+        <p id="AboutUs">More Info</p>
+        <ul id="ul">
+          <li>Creator: Alex</li>
+          <li>Special thanks to: Nicolas & Daniel</li>
+          <li>Contact: 123-4567-8901, insert gmail img, insert twitter img, insert discord img here.....</li>
+        </ul>
+      </div>
+          <!-- <div class="friend">
+          <div class="friend">
+              <div class="friendInside">
+                  1234567890 <img src="https://appamatix.com/wp-content/uploads/2016/05/Anonymous-FeatPic-1200x900.jpg" alt="">
+              </div>
+          </div>
+      -->
+      <div id="searchForGroop">
+        <form id="searchForm" autocomplete="off">
+        <div class="flex" id="containerForAdding">
+          <input type="search" id="searchForGroopInput"></input>
+          <input type="submit" id="submitSearch"></input>
+        </div>
+          <h1 id="exitSearch">&#215</h1>
+        </form>
+      </div>
+      <script type="module" src="../public/scripts/homeES6.js"></script>
 </body>
 </html>

@@ -20,7 +20,10 @@ const userSchema = new mongoose.Schema({
             type: Array
         },
         requests: {
-            type: Array
+          type: Array
+        },
+        servers: {
+          type: Array
         }
     }, {timestamps: true});
 
@@ -43,7 +46,9 @@ const registerFun = async(req, res) => {
     passwordInputHashed = await bcrypt.hash(passwordInput, 10);
     const createdUser = new Users({
         username: usernameInput, 
-        password: passwordInputHashed})
+        password: passwordInputHashed,
+        servers: ["publicChat"]}
+        )
     //save new user to db
     createdUser.save()
         .then((response) => {
